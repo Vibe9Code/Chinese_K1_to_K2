@@ -207,12 +207,34 @@ h2 {
 }
 
 .chinese-card {
+  position: relative;
   align-content: center;
   gap: 8px;
   min-height: 138px;
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.42)),
     #fff7dd;
+}
+
+.speaker-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: var(--lemon);
+  box-shadow: 0 5px 0 rgba(38, 48, 79, 0.12);
+  font-size: 1.35rem;
+  font-weight: 950;
+}
+
+.speaker-button:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 rgba(38, 48, 79, 0.12);
 }
 
 .category-pill {
