@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>幼兒中文學習小遊戲</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">幼兒中文主題</p>
+        <h1>中文學習小遊戲</h1>
+      </div>
+      <div class="mascot" aria-hidden="true">🌟</div>
+    </header>
+
+    <nav class="mode-tabs" aria-label="遊戲模式">
+      <button class="tab active" type="button" data-mode="match">中文對對碰</button>
+      <button class="tab" type="button" data-mode="crossing">橫過馬路</button>
+      <button class="tab" type="button" data-mode="measure">數量詞</button>
+    </nav>
+
+    <section class="game-panel active" id="match" aria-labelledby="match-title">
+      <div class="panel-heading">
+        <span class="star-strip" aria-hidden="true">★ ★ ★</span>
+        <h2 id="match-title">中文對對碰</h2>
+      </div>
+
+      <div class="question-card chinese-card">
+        <div class="category-pill" id="question-category">生活</div>
+        <p class="question-text" id="match-question">哥哥最愛吃什麼？</p>
+      </div>
+
+      <div class="answer-grid chinese-answer-grid" aria-label="選擇答案">
+        <button class="answer-button chinese-choice" type="button" data-choice-index="0">小蟲</button>
+        <button class="answer-button chinese-choice" type="button" data-choice-index="1">馬兒</button>
+        <button class="answer-button chinese-choice" type="button" data-choice-index="2">花朵</button>
+        <button class="answer-button chinese-choice" type="button" data-choice-index="3">糖果</button>
+      </div>
+
+      <div class="feedback" id="match-feedback" aria-live="polite">請選擇一個答案。</div>
+      <button class="next-button" id="next-match" type="button">下一題</button>
+    </section>
+
+    <section class="game-panel" id="crossing" aria-labelledby="crossing-title">
+      <div class="panel-heading">
+        <span class="star-strip" aria-hidden="true">★ ★ ★</span>
+        <h2 id="crossing-title">安全橫過馬路</h2>
+      </div>
+
+      <div class="crossing-scene">
+        <div class="traffic-light" aria-label="交通燈">
+          <span class="lamp red on" data-light="red"></span>
+          <span class="lamp green" data-light="green"></span>
+        </div>
+        <div class="road-scene" aria-hidden="true">
+          <div class="sun">☀️</div>
+          <div class="child" id="child">🧒</div>
+          <div class="crosswalk">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="button-row">
+        <button class="action-button go" type="button" id="cross-button">橫過馬路</button>
+        <button class="action-button change" type="button" id="change-light">轉換燈號</button>
+      </div>
+
+      <div class="feedback" id="cross-feedback" aria-live="polite">看交通燈，安全第一！</div>
+    </section>
+
+    <section class="game-panel" id="measure" aria-labelledby="measure-title">
+      <div class="panel-heading">
+        <span class="star-strip" aria-hidden="true">★ ★ ★</span>
+        <h2 id="measure-title">數量詞遊戲</h2>
+      </div>
+
+      <div class="step-pill" id="measure-step">第 1 步：數一數</div>
+
+      <div class="question-card measure-card">
+        <div class="icon-count" id="icon-count" aria-label="交通工具數量"></div>
+        <p class="question-text" id="measure-question">有多少？</p>
+      </div>
+
+      <div class="choice-step active" id="number-step">
+        <div class="answer-grid number-grid" aria-label="選擇數字">
+          <button class="answer-button number-choice" type="button" data-number="1">一</button>
+          <button class="answer-button number-choice" type="button" data-number="2">兩</button>
+          <button class="answer-button number-choice" type="button" data-number="3">三</button>
+          <button class="answer-button number-choice" type="button" data-number="4">四</button>
+          <button class="answer-button number-choice" type="button" data-number="5">五</button>
+        </div>
+      </div>
+
+      <div class="choice-step" id="classifier-step">
+        <div class="answer-grid classifier-grid" aria-label="選擇量詞">
+          <button class="answer-button classifier-choice" type="button" data-classifier="輛">輛</button>
+          <button class="answer-button classifier-choice" type="button" data-classifier="架">架</button>
+          <button class="answer-button classifier-choice" type="button" data-classifier="列">列</button>
+          <button class="answer-button classifier-choice" type="button" data-classifier="艘">艘</button>
+        </div>
+      </div>
+
+      <div class="success-card" id="measure-success" aria-live="polite"></div>
+      <div class="feedback" id="measure-feedback" aria-live="polite">請先選擇數字。</div>
+      <button class="next-button" id="next-measure" type="button">下一題</button>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
